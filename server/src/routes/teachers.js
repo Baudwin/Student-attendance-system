@@ -19,7 +19,7 @@ router.post('/teacher-login', async(req,res)=>{
                 
                     const accessToken = createToken(user[0])
                     res.cookie("token", accessToken, {httpOnly:true})   
-                    res.json({token:accessToken, userData:user})
+                    res.json({token:accessToken, userData:user, auth:true})
 
                 }else{
                     res.status(404).json({err:"Incorrect password"})

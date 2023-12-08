@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
@@ -8,9 +8,10 @@ const Login = () =>{
        email:"" ,
        password: ""
     })
+
+    const [auth, setAuth] = useState(false)
+
     axios.defaults.withCredentials = true
-
-
     const handleChange = (event)=>{
         const {name,value} = event.target
         setUserInfo( {...userInfo, [name]:value} )
@@ -19,8 +20,8 @@ const Login = () =>{
     const handleClick = (event) =>{
         axios.post('http://localhost:2500/teacher-login', userInfo)
         .then(response=>{
-            // console.log(response.data.token);
-            navigate("/attendance")
+            setAuth(response.data.auth);
+            navigate("/admin-dashboard")
         })
         .catch(err=>{
             console.log(err);
@@ -33,12 +34,6 @@ const Login = () =>{
 
   return (
     <div>
-        {/* <form action="">
-            <input name='email' onChange={handleChange} placeholder='email' value={userInfo.email} type="text" />
-            <input name='password' onChange={handleChange} placeholder='password' value={userInfo.password} type="text" />
-            <button onClick={handleClick} type="submit">Login</button>
-        </form> */}
-
 
         <main className="form-signin w-100 m-auto">
     <form action="" method="" >
