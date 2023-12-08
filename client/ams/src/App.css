@@ -1,0 +1,84 @@
+input{
+    height: 50px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.Link{
+    display: flex;
+    text-decoration: none;
+}
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+
+.h-custom {
+  height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+
+
+/* //LOGIN FORM  */
+.form-signin {
+	max-width: 330px;
+	/* padding-top: 10rem; */
+  }
+  
+  .form-signin .form-floating:focus-within {
+	z-index: 2;
+  }
+  .form-signin input[type="username"] {
+	margin-bottom: 1px;
+	border-top-left-radius: 0.5;
+	border-top-right-radius: 0.5;
+	
+  }
+  .form-signin input[type="text"] {
+	margin-bottom: 1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+  }
+  
+  .form-signin input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	
+  }
+
+  .h3{
+	text-align: center;
+  }
+
+
+input {
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+	display: block;
+	outline: none;
+	padding: 20px 15px 8px 30px;
+	position: relative;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	width: 100%;
+	}
+	input:focus {
+	border-bottom-color: #407e93;
+	border-bottom-width: 2px;
+	}
+
+.student{
+    padding: 0 100px 30px 100px;
+}
